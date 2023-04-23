@@ -1,32 +1,78 @@
-# Prerequisites
-*.d
+#include <iostream>
+#include <stdlib.h>
+int main(){
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
 
-# Precompiled Headers
-*.gch
-*.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+  int user = 0;
 
-# Fortran module files
-*.mod
-*.smod
+  std::string choice = "The computer choose: ";
+ 
+while (user != 4){
+  srand (time(NULL));
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
 
-# Executables
-*.exe
-*.out
-*.app
+  int computer = rand() % 3 + 1;
+
+    std::cout << "====================\n";
+    std::cout << "rock paper scissors!\n";
+    std::cout << "====================\n";
+
+    std::cout << "1) ✊\n";
+    std::cout << "2) ✋\n";
+    std::cout << "3) ✌️\n";
+
+    std::cout << "shoot!\n";
+    std::cout << "Press 4 to exit\n";
+    std::cin >> user;
+
+
+    if (computer == user){
+
+      std::cout << "It's a tie\n";
+
+    }
+    else if (computer == 1 && user == 2){
+      
+      std::cout << choice << "rock\n";
+      std::cout << "You win\n";
+
+    }
+    else if (computer == 1 && user == 3){
+
+      std::cout << choice << "rock\n";
+      std::cout << "You loose\n";
+
+    }
+    else if (computer == 2 && user == 1){
+
+      std::cout << choice << "paper\n";
+      std::cout << "You loose\n";
+
+    }
+    else if (computer == 2 && user == 3){
+
+      std::cout << choice << "paper\n";
+      std::cout << "You win\n";
+
+    }
+    else if (computer == 3 && user == 1){
+
+      std::cout << choice << "scissors\n";
+      std::cout << "You win\n";
+
+    }
+    else if (computer == 3 && user == 2){
+
+      std::cout << choice << "scissors\n";
+      std::cout << "You loose\n";
+    }
+    else{
+
+      std::cout << "You exit\n";
+
+    }
+}
+return 0;
+}
+
